@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Classrooms</h2>
+    <a href="{{ url_for('classes.new_class') }}" class="btn">Add New Class</a>
+    <ul>
+    {% for room in classrooms %}
+        <li><a href="{{ url_for('classes.class_detail', class_id=room.id) }}">{{ room.name }} - {{ room.subject }}</a></li>
+    {% else %}
+        <p>No classrooms added yet.</p>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

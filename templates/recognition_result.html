@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Recognition Results</h2>
+    <p>Facial detection complete. Attendance marked for matching students.</p>
+    <a href="{{ url_for('attendance.attendance_report', class_id=classroom.id) }}" class="btn">View Final Report</a>
+</div>
+{% endblock %}

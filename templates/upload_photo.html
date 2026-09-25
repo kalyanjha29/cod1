@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Upload Attendance Image for {{ classroom.name }}</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <p><input type="file" name="photo" accept="image/*" required></p>
+        <button type="submit" class="btn">Upload & Recognize</button>
+    </form>
+</div>
+{% endblock %}

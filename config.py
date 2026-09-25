@@ -10,7 +10,6 @@ class Config:
     
     UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads')
     EMBEDDINGS_FOLDER = os.path.join(BASE_DIR, 'static', 'models')
-    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max upload size
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  
     
-    # Allowed image extensions for face recognition
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}

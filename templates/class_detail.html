@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>{{ classroom.name }} ({{ classroom.subject }})</h2>
+    <a href="{{ url_for('classes.new_student', class_id=classroom.id) }}" class="btn">Add Student</a>
+    <a href="{{ url_for('attendance.upload_photo', class_id=classroom.id) }}" class="btn">Take Attendance</a>
+    <a href="{{ url_for('attendance.attendance_report', class_id=classroom.id) }}" class="btn">View Report</a>
+    
+    <h3>Enrolled Students</h3>
+    <ul>
+    {% for student in classroom.students %}
+        <li>{{ student.roll_number }} - {{ student.name }}</li>
+    {% else %}
+        <p>No students in this class.</p>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
